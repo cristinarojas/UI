@@ -1,0 +1,10 @@
+.frame {
+  border: 1px solid red;
+  height: 30px;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  border: 1px solid blue;
+}
