@@ -6,19 +6,16 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr; /* how many columns we want with fractions, also can be in px, %, auto */
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   grid-template-areas:
   /*4 times because we have 4 rows*/
-  "title title" /*Because we have 2 columns*/
-  "header header"
   "sidebar content" /* white space . */
-  "footer footer";
 }
 
 .title {
   grid-area: title;
 
-  
+
   background-color: red;
   color: white;
   /*grid-column: 1 / 3;*/
