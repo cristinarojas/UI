@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  padding: 0px;
+  margin: 0px;
+}
+
+.container {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.container .header-item .header-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.container .header-item .header-container .logo-item {
+  margin-left: 60px;
+  height: 30px;
+  width: 100px;
+}
+
+.container .header-item .header-container .logo-item img {
+  width: 100%;
+  height: 100%;
+}
+
+.container .header-item .header-container .nav-item {
+  margin-right: 60px;
+  position: relative;
+}
+.container .header-item .header-container .nav-item ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container .header-item .header-container .nav-item ul li {
+  display: inline-block;
+}
+
+.container .header-item .header-container .nav-item ul li a {
+  padding: 0 24px;
+  color: #000;
+  font-size: 13px;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: sans-serif;
+
+  text-decoration: none;
+  position: relative;
+}
+
+.container .header-item .header-container .nav-item ul li a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0px;
+  background-color: #000;
+  visibility: hidden;
+  transform: scaleX(0);
+  -webkit-transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+}
+
+.container .header-item .header-container .nav-item ul li a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+}
+
+.container .main-item .video {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.container .info-item .data-container {
+  height: 500px;
+  padding: 20px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .info-item .data-container h1 {
+  font-size: 48px;
+  color: #c1acaf;
+  font-family: sans-serif;
+}
+
+.container .info-item .data-container p {
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+.container .info-item .data-container button {
+  background-color: #b10a3e;
+  border: 1px solid #b10a3e;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  height: 40px;
+  width: 20%;
+}
+
+/* mediaqueries and flex*/
+/* max width -> in this max width of the element apply this rules - to down */
+@media screen and (max-width: 1024px) {
+  .container .header-item .header-container {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .container .header-item .header-container .logo-item {
+    margin: 30px 0px 15px 0px; /* like a clock */
+  }
+
+  .container .header-item .header-container .nav-item {
+    margin: 0px;
+  }
+
+  .container .header-item .header-container .nav-item ul li {
+    display: block;
+    margin: 10px;
+  }
+
+  .container .main-item main .video iframe {
+    margin-top: -211px !important;
+    margin-left: inherit !important;
+    width: inherit !important;
+  }
+
+  .container .info-item .data-container h1 {
+    color: #cac248;
+    font-size: 36px;
+  }
+
+  .container .info-item .data-container button {
+    width: 50%;
+  }
+}
