@@ -10,23 +10,68 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: "header header" "main main" "footer footer";
+  grid-template-rows: auto;
+  grid-template-areas:
+  "header header"
+  "main main"
+  "gallery gallery"
+  "footer footer";
+
+  font-family: sans-serif;
+  box-sizing: border-box;
+  margin: 3%;
 }
 
 .header {
   grid-area: header;
-  border: 1px solid red;
+  width: 100%;
 }
 
 .main {
   grid-area: main;
-  border: 1px solid green;
+  padding-top: 45px;
+}
+
+.main p {
+  font-size: 30px;
+  line-height: 42px;
+  margin: 0;
+  color: #969292;
+}
+
+.main p:first-child {
+  font-size: 30px;
+  line-height: 42px;
+  font-weight: 400;
+  margin: 0;
+  color: #3b3b3b;
+}
+
+.gallery {
+ grid-area: gallery;
+}
+
+.gridGallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+  "one two";
+  justify-items: center;
+  align-items: center;
+  padding-top: 5%;
+}
+
+.gridGallery img {
+  width: 70%;
 }
 
 .footer {
   grid-area: footer;
-  border: 1px solid purple;
+  border-top: 1px solid #dedede;
+  height: 150px;
+  margin-top: 10px;
+  line-height: 150px;
 }
 
 .navigation-grid {
@@ -34,11 +79,12 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "logo options options options";
+  height: 100%;
+  width: 100%;
 }
 
 .logo {
   grid-area: logo;
-  background-color: yellow;
 }
 
 .logo p {
@@ -48,10 +94,62 @@ body {
   color: #3b3b3b;
   font-size: 30px;
   line-height: 30px;
-  text-transform: capitalize;
+  line-height: 40px;
+  text-transform: uppercase;
 }
 
 .options {
-  background-color: pink;
   grid-area: options;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  padding: 0px;
+}
+
+.options li {
+  margin: 25px;
+  color: #848484;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.options li:hover {
+  color: #c4c4c4;
+}
+
+
+@media screen and (max-width: 1024px) {
+  /* This is for mobile version */
+
+  .navigation-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "logo logo"
+    "options options"
+  }
+
+  .options {
+    justify-content: center;
+  }
+
+  .main {
+    height: 100%;
+  }
+
+  .gridGallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "one"
+    "two";
+  }
+
+  .gridGallery img {
+    margin-top: 2%;
+  }
 }
