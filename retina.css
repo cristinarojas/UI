@@ -1,0 +1,11 @@
+.retina {
+  background-image: url('normal-image.png');
+}
+
+/*media query - when the device ratio is 1.5 or more*/
+@media (-webkit-min-device-ratio: 1.5), (min-resolution: 144dpi) {
+  .retina {
+    background-image: url('retina-image@2x.png');
+    background-size: 410px 450px;
+  }
+}
